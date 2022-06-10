@@ -1,3 +1,4 @@
 export {
-    fetchAllIds
+    fetchAllIds,
+    fetchNews
 } from './news';

@@ -1,0 +1,23 @@
+.NewsItem {
+    font-size: 0.8rem;
+    list-style: none;
+    font-weight: 600;
+    padding: 0.9rem 0;
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    text-align: left;
+}
+
+p {
+    margin: 0.4rem 0;
+}
+
+p:first-of-type {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.Transparent {
+    color: rgb(133, 133, 133);
+    font-weight: 100;
+}

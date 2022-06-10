@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './NewsBuilder.module.css';
 import * as actions from '../../store/actions/index';
 import { connect } from 'react-redux';
+import NewsItems from '../../components/NewsItems/NewsItems';
 
 class NewsBuilder extends Component {
 
@@ -12,7 +13,7 @@ class NewsBuilder extends Component {
     render() {
         return (
             <div className={classes.NewsBuilder}>
-
+                {this.props.news.length > 0 ? <NewsItems/> : null}
             </div>
         );
     }
@@ -21,6 +22,7 @@ class NewsBuilder extends Component {
 const mapStatetoProps = state => {
     return {
         newsIds: state.news.newsIds,
+        news: state.news.news,
     }
 }
 

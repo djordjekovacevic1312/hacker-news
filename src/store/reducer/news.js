@@ -3,12 +3,22 @@ import { updateObject } from '../utility';
 
 const initialState = {
     newsIds: [],
-    error: null,
-    loading: false
+    news: [],
+    loading: false,
+    error: null
 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case actionTypes.FETCH_NEWS_SUCCESS:
+            return updateObject(state, {loading: false, error: null, news: action.news});
+
+        case actionTypes.FETCH_NEWS_FAIL:
+            return updateObject(state, {loading: false, error: action.error});
+
+        case actionTypes.FETCH_NEWS_START:
+            return updateObject(state, {loading: true});
+
         case actionTypes.FETCH_ALL_IDS_SUCCESS:
             return updateObject(state, {loading: false, error: null, newsIds: action.newsIds})
 
