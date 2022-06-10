@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import classes from './Toolbar.module.css';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
-
+import { connect } from 'react-redux';
+import * as actions from '../../store/actions/index';
 
 class Toolbar extends Component {
     render() {
@@ -11,13 +12,17 @@ class Toolbar extends Component {
                 Hacker News
                 <AutorenewIcon 
                     style={{cursor: 'pointer'}}
-                    //onClick={}
-                    />
+                    onClick={this.props.onFetchNewsIds}/>
             </div>
         </div>
         );
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+        onFetchNewsIds: () => dispatch(actions.fetchAllIds())
+    }
+}
 
-export default Toolbar;
+export default connect(null, mapDispatchToProps)(Toolbar);

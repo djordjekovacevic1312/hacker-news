@@ -1,0 +1,14 @@
+.Modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 100px;
+    margin-left: -250px;
+    margin-top: -50px;
+    background: white;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
