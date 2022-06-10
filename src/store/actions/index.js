@@ -1,0 +1,3 @@
+export {
+    fetchAllIds
+} from './news';
