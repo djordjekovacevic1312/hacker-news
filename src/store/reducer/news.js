@@ -4,6 +4,7 @@ import { updateObject } from '../utility';
 const initialState = {
     newsIds: [],
     news: [],
+    page: 1,
     loading: false,
     error: null
 };
@@ -11,7 +12,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.FETCH_NEWS_SUCCESS:
-            return updateObject(state, {loading: false, error: null, news: action.news});
+            return updateObject(state, {loading: false, error: null, news: action.news, page: action.page});
 
         case actionTypes.FETCH_NEWS_FAIL:
             return updateObject(state, {loading: false, error: action.error});

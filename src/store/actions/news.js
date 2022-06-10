@@ -27,7 +27,7 @@ export const fetchAllIds = () => {
         axiosLocal.get('/beststories.json?print=pretty')
             .then(response => {
                 dispatch(fetchAllIdsSuccess(response.data));
-                dispatch(fetchNews(response.data.slice(0, 20), 0))
+                dispatch(fetchNews(response.data.slice(0, 20), 0, 1))
             })
             .catch(error => {
                 dispatch(fetchAllIdsFail(error));
@@ -35,10 +35,11 @@ export const fetchAllIds = () => {
     }
 }
 
-const fetchNewsSuccess = (news) => {
+const fetchNewsSuccess = (news, page) => {
     return {
         type: actionTypes.FETCH_NEWS_SUCCESS,
-        news: news
+        news: news,
+        page: page
     }
 }
 
@@ -55,7 +56,7 @@ const fetchNewsStart = () => {
     }
 }
 
-export const fetchNews = (newsIds, startNumber) => {
+export const fetchNews = (newsIds, startNumber, page) => {
     return dispatch => {
         dispatch(fetchNewsStart());
         const news = [];
@@ -71,7 +72,7 @@ export const fetchNews = (newsIds, startNumber) => {
                     number++;
                     count++;
                     if(count === newsIds.length) {
-                        dispatch(fetchNewsSuccess(news));
+                        dispatch(fetchNewsSuccess(news, page));
                     } else {
                         get();
                     }

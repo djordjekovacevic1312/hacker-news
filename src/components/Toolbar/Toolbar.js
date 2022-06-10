@@ -9,7 +9,10 @@ class Toolbar extends Component {
             <div className={classes.Toolbar}>
             <div className={classes.ToolbarItems}>
                 Hacker News
-                <AutorenewIcon style={{cursor: 'pointer'}}/>
+                <AutorenewIcon 
+                    style={{cursor: 'pointer'}}
+                    //onClick={}
+                    />
             </div>
         </div>
         );
