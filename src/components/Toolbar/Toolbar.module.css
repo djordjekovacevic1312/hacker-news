@@ -1,0 +1,19 @@
+.Toolbar {
+    position: fixed;
+    width: 100vw;
+    height: 48px;
+    top: 0;
+    left: 0;
+    background: rgb(60, 57, 57);
+    color: whitesmoke;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.ToolbarItems {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
